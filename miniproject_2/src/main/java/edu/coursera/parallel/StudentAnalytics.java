@@ -100,6 +100,7 @@ public final class StudentAnalytics {
     public String mostCommonFirstNameOfInactiveStudentsParallelStream(
             final Student[] studentArray) {
         return Arrays.stream(studentArray)
+                .parallel()
                 .filter(student -> !student.checkIsCurrent())
                 .collect(
                     Collectors.collectingAndThen(
